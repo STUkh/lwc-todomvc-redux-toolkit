@@ -24,7 +24,11 @@ export default class TodoApp extends lwcReduxMixin({ mapStateToProps: selector }
   wireTodos({ error, data }) {
     // Load only if localStorage is empty  
     const localTodos = getTodosFromLocalStorage();
-    const dataset = localTodos?.items?.length ? localTodos.items : data;
+    let dataset = localTodos?.items?.length ? localTodos.items : data;
+
+    if (typeof dataset === 'string') {
+      dataset = JSON.parse(dataset);
+    }
 
     if (dataset) {
       dispatch(todosSlice.actions.setTodos(dataset));

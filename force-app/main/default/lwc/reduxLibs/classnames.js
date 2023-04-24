@@ -1,20 +1,8 @@
-/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.classNames = {}));
-})(this, (function (exports) { 'use strict';
+'use strict';
 
 var hasOwn = {}.hasOwnProperty;
-var nativeCodeString = '[native code]';
 
-function classNames() {
+export function classNames() {
 	var classes = [];
 
 	for (var i = 0; i < arguments.length; i++) {
@@ -48,10 +36,3 @@ function classNames() {
 
 	return classes.join(' ');
 }
-
-exports.classNames = classNames;
-exports.default = classNames;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-}));
