@@ -1,3 +1,7 @@
+# SF files
+/.sf
+/.sfdx
+
 # Log files
 logs
 *.log

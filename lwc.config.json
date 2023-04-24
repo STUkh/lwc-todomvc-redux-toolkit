@@ -1,7 +1,46 @@
 {
     "modules": [
+        {
+            "name": "c/todoApp",
+            "path": "force-app/main/default/lwc/todoApp/todoApp.js"
+        },
+        {
+            "name": "c/todoList",
+            "path": "force-app/main/default/lwc/todoList/todoList.js"
+        },
+        {
+            "name": "c/todoFooter",
+            "path": "force-app/main/default/lwc/todoFooter/todoFooter.js"
+        },
+        {
+            "name": "c/todoHeader",
+            "path": "force-app/main/default/lwc/todoHeader/todoHeader.js"
+        },
+        {
+            "name": "c/todoItem",
+            "path": "force-app/main/default/lwc/todoItem/todoItem.js"
+        },
+        {
+            "name": "c/lwcRedux",
+            "path": "force-app/main/default/lwc/lwcRedux/lwcRedux.js"
+        },
+        {
+            "name": "c/reduxSlice",
+            "path": "force-app/main/default/lwc/reduxSlice/reduxSlice.js"
+        },
+        {
+            "name": "c/store",
+            "path": "force-app/main/default/lwc/store/store.js"
+        },
+        {
+            "name": "c/reduxLibs",
+            "path": "force-app/main/default/lwc/reduxLibs/reduxLibs.js"
+        },
+        {
+            "name": "c/utils",
+            "path": "force-app/main/default/lwc/utils/utils.js"
+        },
         { "dir": "force-app/main/default/lwc" },
-        { "npm": "lightning-base-components" },
-        { "npm": "classnames" }
+        { "npm": "lightning-base-components" }
     ]
 }

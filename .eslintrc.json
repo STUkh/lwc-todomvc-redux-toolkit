@@ -10,6 +10,7 @@
     },
     "globals": {
         "process": true,
-        "module": true
+        "module": true,
+        "__dirname": true
     }
 }

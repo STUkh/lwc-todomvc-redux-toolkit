@@ -18,6 +18,7 @@
         "@lwc/jest-transformer": "^11.8.0",
         "@lwc/module-resolver": "^2.42.0",
         "@lwc/rollup-plugin": "^2.42.0",
+        "@rollup/plugin-alias": "^5.0.0",
         "@rollup/plugin-commonjs": "^24.1.0",
         "@rollup/plugin-node-resolve": "^15.0.2",
         "@rollup/plugin-replace": "^5.0.2",

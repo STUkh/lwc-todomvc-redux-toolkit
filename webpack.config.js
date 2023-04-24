@@ -16,6 +16,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.html'],
+        alias: {
+            "@salesforce/apex/TodoAppService.todoWireAdapter": path.resolve(__dirname, 'mocks/todoWireAdapter.js')
+        }
     },
     module: {
         rules: [
