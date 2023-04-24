@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import companyTodoApp from '../todoApp';
+import TodoApp from '../todoApp';
 import { dispatch } from '../../store/store';
 import { actions } from '../../reduxSlice/todoApp.slice';
 
@@ -15,7 +15,7 @@ jest.mock('../../utils/storageUtils', () => ({
 }));
 
 
-describe('company-todo-app', () => {
+describe('c-todo-app', () => {
     let todoAppEl;
     let todoAppShadowRoot;
     let appComponent;
@@ -25,7 +25,7 @@ describe('company-todo-app', () => {
 
     beforeEach(() => {
         todoAppEl = createElement('c-todo-app', {
-            is: companyTodoApp
+            is: TodoApp
         });
 
         todoAppShadowRoot = todoAppEl.shadowRoot;
