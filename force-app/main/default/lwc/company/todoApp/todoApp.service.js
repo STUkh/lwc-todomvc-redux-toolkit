@@ -1,4 +1,4 @@
-import { getMockWireAdapter } from '../../../utils/wireAdapterMock.js';
+import { getMockWireAdapter } from 'company/utils';
 
 export const todoWireAdapter = getMockWireAdapter(async (params) => {
     // Simple variant

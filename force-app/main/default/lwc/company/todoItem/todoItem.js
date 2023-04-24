@@ -1,8 +1,9 @@
-// todo-item.js
 import { LightningElement, api } from 'lwc';
-import classNames from 'classnames';
-import { actions } from '../../../redux/todoApp.slice.js';
-import { dispatch } from '../../../redux/store.js';
+import { classNames } from 'company/reduxLibs';
+import { dispatch } from 'company/store';
+import { todosSlice } from 'company/reduxSlice';
+
+const { actions } = todosSlice;
 
 // Stateful component that accept particular "todo" from parent component
 export default class TodoItem extends LightningElement {

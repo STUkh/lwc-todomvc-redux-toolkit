@@ -1,8 +1,10 @@
 import { LightningElement, track } from 'lwc';
-import { pluralize } from '../../../utils/pluralize';
-import { lwcReduxMixin } from '../../../redux/lwc-redux.component.js';
-import { actions } from '../../../redux/todoApp.slice.js';
-import { dispatch } from '../../../redux/store.js';
+import { lwcReduxMixin } from 'company/lwcRedux';
+import { dispatch } from 'company/store';
+import { todosSlice } from 'company/reduxSlice';
+import { pluralize } from 'company/utils';
+
+const { actions } = todosSlice;
 
 const selector = (store) => ({
   todos: store.todos.items,

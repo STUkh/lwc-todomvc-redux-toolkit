@@ -1,8 +1,7 @@
 import { createElement } from 'lwc';
 import companyTodoApp from '../todoApp';
-import { getTodosFromLocalStorage } from '../../../../utils/localStorage';
-import { store, dispatch } from '../../../../redux/store';
-import { actions } from '../../../../redux/todoApp.slice';
+import { store, dispatch } from '../../store/store';
+import { actions } from '../todoApp.slice';
 
 let defaultTodos = [
     { id: 1, title: 'Test todo 1', completed: false },
@@ -10,7 +9,7 @@ let defaultTodos = [
     { id: 3, title: 'Test todo 3', completed: false }
 ];
 
-jest.mock('../../../../utils/localStorage', () => ({
+jest.mock('../../utils/storageUtils', () => ({
     getTodosFromLocalStorage: jest.fn().mockImplementation(() => defaultTodos),
     saveTodosToLocalStorage: jest.fn(),
 }));

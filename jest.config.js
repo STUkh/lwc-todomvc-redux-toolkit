@@ -1,13 +1,12 @@
-import * as sfdxLwcConfig from '@salesforce/sfdx-lwc-jest/config.js';
-
+const sfdxLwcConfig = require('@salesforce/sfdx-lwc-jest/config.js');
 const { jestConfig } = sfdxLwcConfig;
 
 const config = {
     ...jestConfig,
     moduleNameMapper: {
-        '^c/(.*)$': ['<rootDir>/src/modules/$1/$1'],
-        '^company/(.*)$': '<rootDir>/src/modules/company/$1/$1'
+        '^c/(.*)$': ['<rootDir>/force-app/main/default/lwc/$1/$1'],
+        '^company/(.*)$': '<rootDir>/force-app/main/default/lwc/company/$1/$1'
     },
 };
 
-export default config;
+module.exports = config;

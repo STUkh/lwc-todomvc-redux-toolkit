@@ -47,7 +47,7 @@ module.exports = {
                         }
                     }
                 ],
-                exclude: [ /node_modules/, /src\/modules/ ]
+                exclude: [ /node_modules/, /force-app/ ]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,

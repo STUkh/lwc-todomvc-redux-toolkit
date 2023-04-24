@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import { lwcReduxMixin } from '../../../redux/lwc-redux.component.js';
+import { lwcReduxMixin } from 'company/lwcRedux';
 
 const selector = (store) => ({
   todos: store.todos.items,

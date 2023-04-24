@@ -1,4 +1,6 @@
-import { createSlice } from '../resources/scripts/redux-toolkit.umd.min.js';
+import { reduxToolkit } from 'company/reduxLibs';
+
+const { createSlice } = reduxToolkit;
 
 const defaultState = {
   visibilityFilter: 'all',
@@ -47,7 +49,6 @@ export const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, toggleTodo, deleteTodo, setVisibilityFilter, clearCompleted } = todosSlice.actions;
-export const { reducer: todosReducer, actions } = todosSlice;
+export const { reducer, actions } = todosSlice;
 
 export default todosSlice;

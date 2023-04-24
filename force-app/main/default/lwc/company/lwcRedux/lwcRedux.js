@@ -1,4 +1,4 @@
-import { store } from './store.js';
+import { store } from 'company/store';
 
 export function lwcReduxMixin(
     { mapStateToProps = null, propName = null } = {},

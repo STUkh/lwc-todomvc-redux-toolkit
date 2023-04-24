@@ -18,6 +18,7 @@
         "@lwc/jest-transformer": "^11.8.0",
         "@lwc/module-resolver": "^2.42.0",
         "@lwc/rollup-plugin": "^2.42.0",
+        "@rollup/plugin-node-resolve": "^15.0.2",
         "@rollup/plugin-replace": "^5.0.2",
         "@salesforce-ux/design-system": "^2.20.1",
         "@salesforce/eslint-config-lwc": "^3.4.0",
@@ -73,9 +74,10 @@
     },
     "repository": "STUkh/lwc-todomvc",
     "scripts": {
+        "analyze": "webpack-bundle-analyzer dist/stats.json",
         "build": "webpack build --mode production",
         "build:rollup": "NODE_ENV=production rollup -c",
-        "build:development": "lwc-services build",
+        "build:development": "webpack build --mode development",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
@@ -84,7 +86,6 @@
         "test:unit:debug": "sfdx-lwc-jest --debug",
         "test:unit:watch": "sfdx-lwc-jest --watch",
         "watch": "webpack serve --mode development",
-        "analyze": "webpack-bundle-analyzer dist/stats.json",
         "watch:rollup": "rollup -c --watch"
     }
 }

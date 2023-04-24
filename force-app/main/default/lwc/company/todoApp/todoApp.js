@@ -1,10 +1,11 @@
 // todo-app.js
 import { LightningElement, track, wire } from 'lwc';
-import { lwcReduxMixin } from '../../../redux/lwc-redux.component.js';
-import { actions } from '../../../redux/todoApp.slice.js';
-import { dispatch } from '../../../redux/store.js';
-import { todoWireAdapter } from './todoApp.service';
-import { getTodosFromLocalStorage } from '../../../utils/localStorage.js';
+import { lwcReduxMixin } from 'company/lwcRedux';
+import { dispatch } from 'company/store';
+import { getTodosFromLocalStorage } from 'company/utils';
+import { todosSlice } from 'company/reduxSlice';
+
+import { todoWireAdapter } from './todoApp.service.js';
 
 const selector = (store) => ({
   todos: store.todos.items
@@ -26,7 +27,7 @@ export default class TodoApp extends lwcReduxMixin({ mapStateToProps: selector }
     const dataset = localTodos?.items?.length ? localTodos.items : data;
 
     if (dataset) {
-      dispatch(actions.setTodos(dataset));
+      dispatch(todosSlice.actions.setTodos(dataset));
     } else if (error) {
         this.error = error;
     }

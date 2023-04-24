@@ -1,6 +1,6 @@
 {
     "modules": [
-        { "dir": "src/modules" },
+        { "dir": "force-app/main/default/lwc" },
         { "npm": "lightning-base-components" },
         { "npm": "classnames" }
     ]

@@ -1,6 +1,8 @@
-import { configureStore } from '../resources/scripts/redux-toolkit.umd.min.js';
+import { reduxToolkit } from 'company/reduxLibs';
+import { saveTodosToLocalStorage } from 'company/utils';
 import rootReducer from './reducers.js';
-import { saveTodosToLocalStorage } from '../utils/localStorage.js';
+
+const { configureStore } = reduxToolkit;
 
 const preloadedState = {};
 

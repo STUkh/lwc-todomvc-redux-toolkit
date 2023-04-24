@@ -1,11 +1,12 @@
-import lwc from '@lwc/rollup-plugin';
-import replace from '@rollup/plugin-replace';
-import serve from 'rollup-plugin-serve';
-import livereload from 'rollup-plugin-livereload';
+const lwc = require('@lwc/rollup-plugin');
+const replace = require('@rollup/plugin-replace');
+const serve = require('rollup-plugin-serve');
+const livereload = require('rollup-plugin-livereload');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 
 const __ENV__ = process.env.NODE_ENV ?? 'development';
 
-export default (args) => {
+module.exports = (args) => {
     return {
         input: 'src/index.js',
 
@@ -15,6 +16,7 @@ export default (args) => {
         },
 
         plugins: [
+            nodeResolve(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify(__ENV__),
                 preventAssignment: true,
