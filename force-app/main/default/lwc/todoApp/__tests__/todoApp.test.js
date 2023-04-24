@@ -3,17 +3,25 @@ import TodoApp from '../todoApp';
 import { dispatch } from '../../store/store';
 import { actions } from '../../reduxSlice/todoApp.slice';
 
-let defaultTodos = [
+import todoWireAdapter from '@salesforce/apex/TodoAppService.todoWireAdapter';
+
+// Setup default data
+const defaultTodos = Object.freeze([
     { id: 1, title: 'Test todo 1', completed: false },
     { id: 2, title: 'Test todo 2', completed: true },
     { id: 3, title: 'Test todo 3', completed: false }
-];
+]);
 
-jest.mock('../../utils/storageUtils', () => ({
-    getTodosFromLocalStorage: jest.fn().mockImplementation(() => defaultTodos),
-    saveTodosToLocalStorage: jest.fn(),
-}));
-
+// Setup mocks for wire adapters
+jest.mock('@salesforce/apex/TodoAppService.todoWireAdapter',
+    () => {
+        const { createApexTestWireAdapter } = require("@salesforce/sfdx-lwc-jest");
+        return {
+            default: createApexTestWireAdapter(jest.fn())
+        };
+    },
+    { virtual: true }
+);
 
 describe('c-todo-app', () => {
     let todoAppEl;
@@ -30,8 +38,10 @@ describe('c-todo-app', () => {
 
         todoAppShadowRoot = todoAppEl.shadowRoot;
         appComponent = todoAppShadowRoot.model;
-
-        dispatch(actions.setTodos(defaultTodos));
+        
+        // You can do any - "dispatch" or "todoWireAdapter.emit" to init data
+        // dispatch(actions.setTodos(defaultTodos));
+        todoWireAdapter.emit(defaultTodos);
 
         document.body.appendChild(todoAppEl);
 
