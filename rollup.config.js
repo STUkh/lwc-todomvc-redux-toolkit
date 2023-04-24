@@ -3,6 +3,7 @@ const replace = require('@rollup/plugin-replace');
 const serve = require('rollup-plugin-serve');
 const livereload = require('rollup-plugin-livereload');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
 
 const __ENV__ = process.env.NODE_ENV ?? 'development';
 
@@ -22,6 +23,7 @@ module.exports = (args) => {
                 preventAssignment: true,
             }),
             lwc(),
+            commonjs(),
             args.watch &&
                 serve({
                     open: false,
