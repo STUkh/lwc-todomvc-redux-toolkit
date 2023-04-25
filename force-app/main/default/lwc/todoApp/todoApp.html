@@ -3,7 +3,7 @@
         <div class="todo-app">
             <c-todo-header></c-todo-header>
             <c-todo-list></c-todo-list>
-            <c-todo-footer if:true={todos.length}></c-todo-footer>
+            <c-todo-footer lwc:if={todos.length}></c-todo-footer>
         </div>
         <div class="info">
             <p>Double-click to edit a todo</p>
