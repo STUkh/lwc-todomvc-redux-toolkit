@@ -1,6 +1,6 @@
 
-import * as reduxToolkit from './reduxToolkit.umd.min.js';
-import * as rtkQuery from './rtkQuery.umd.min.js';
+import * as reduxToolkit from './reduxToolkit.js';
+import * as rtkQuery from './rtkQuery.js';
 import { classNames } from './classnames.js';
 
 export {

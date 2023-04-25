@@ -5,8 +5,6 @@
     "author": "STUkh",
     "bugs": "https://github.com/STUkh/lwc-todomvc-redux-toolkit/issues",
     "dependencies": {
-        "@reduxjs/toolkit": "^1.9.5",
-        "classnames": "^2.3.2",
         "lightning-base-components": "^1.17.7-alpha"
     },
     "devDependencies": {

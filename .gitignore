@@ -1,6 +1,7 @@
 # SF files
 /.sf
 /.sfdx
+/.localdevserver
 
 # Log files
 logs
